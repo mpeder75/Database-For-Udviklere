@@ -5,6 +5,9 @@ docker compose -f mysql-compose.yml up -d
 docker compose -f postgres-compose.yml up -d
 docker compose -f redis-compose.yml up -d
 docker compose -f mongodb-compose.yml up -d
+echo "Fixing pgAdmin permissions..."
+docker exec -u root postgres-pgadmin chown -R 5050:5050 /var/lib/pgadmin
+docker restart postgres-pgadmin
 echo "All databases started!"
 echo "UI's available at:"
 echo "  MySQL phpMyAdmin: Port 8082"
