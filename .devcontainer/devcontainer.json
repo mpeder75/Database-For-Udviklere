@@ -17,5 +17,5 @@
     "8084": { "label": "UI - pgAdmin" },
     "8085": { "label": "UI - RedisInsight" }
   },
-  "postCreateCommand": "bash start-databases.sh"
+  "postCreateCommand": "echo 'Run ./start-databases.sh to start databases'"
 }
