@@ -9,7 +9,12 @@ echo "Waiting for pgAdmin to start..."
 sleep 10
 echo "Fixing pgAdmin permissions..."
 docker exec -u root postgres-pgadmin chown -R 5050:5050 /var/lib/pgadmin
+echo "pgAdmin permissions fixed, restarting..."
 docker restart postgres-pgadmin
+echo "Waiting for pgAdmin to restart..."
+sleep 10
+echo "pgAdmin logs:"
+docker logs postgres-pgadmin --tail 5
 echo "All databases started!"
 echo "UI's available at:"
 echo "  MySQL phpMyAdmin: Port 8082"
