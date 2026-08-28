@@ -5,6 +5,8 @@ docker compose -f mysql-compose.yml up -d
 docker compose -f postgres-compose.yml up -d
 docker compose -f redis-compose.yml up -d
 docker compose -f mongodb-compose.yml up -d
+echo "Waiting for pgAdmin to start..."
+sleep 10
 echo "Fixing pgAdmin permissions..."
 docker exec -u root postgres-pgadmin chown -R 5050:5050 /var/lib/pgadmin
 docker restart postgres-pgadmin
