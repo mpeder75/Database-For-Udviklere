@@ -39,3 +39,5 @@ services:
     environment:
       - PGADMIN_DEFAULT_EMAIL=root@local.com
       - PGADMIN_DEFAULT_PASSWORD=root
+      - PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION=False
+      - PGADMIN_CONFIG_WTF_CSRF_ENABLED=False
