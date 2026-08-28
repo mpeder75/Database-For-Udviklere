@@ -1,0 +1,21 @@
+{
+  "name": "Database-For-Udviklere",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "forwardPorts": [1433, 3306, 5432, 6379, 8081, 8082, 8083, 8084, 8085, 27017],
+  "portsAttributes": {
+    "1433": { "label": "MSSQL" },
+    "3306": { "label": "MySQL" },
+    "5432": { "label": "PostgreSQL" },
+    "6379": { "label": "Redis" },
+    "27017": { "label": "MongoDB" },
+    "8081": { "label": "UI - Mongo Express" },
+    "8082": { "label": "UI - phpMyAdmin" },
+    "8083": { "label": "UI - Adminer" },
+    "8084": { "label": "UI - pgAdmin" },
+    "8085": { "label": "UI - RedisInsight" }
+  },
+  "postCreateCommand": "bash start-databases.sh"
+}
